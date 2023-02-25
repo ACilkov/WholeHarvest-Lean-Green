@@ -1,0 +1,30 @@
+/* Color Styles - Global Scope */
+$red-clr: #D43B4A;
+$beige-clr: #F0D8A8;
+$white-clr: #FFF;
+$green-clr: #549663;
+$green-bg: #F3F6F0;
+$black-clr: #363636;
+$yellow-clr: #FFD800;
+$grey-bg: #F1F0F5;
+$btn-hover-yellow: linear-gradient(180deg, #FFE600 0%, #FFC700 100%);
+
+// Color for fonts
+.red-clr {
+    color: $red-clr;
+}
+.beige-clr {
+    color: $beige-clr;
+}
+.white-clr {
+    color: $white-clr;
+}
+.green-clr{
+    color: $green-clr;
+}
+.black-clr {
+    color: $black-clr;
+}
+.yellow-clr {
+    color: $yellow-clr;
+}

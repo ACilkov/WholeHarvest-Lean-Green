@@ -1,0 +1,31 @@
+/* Even though there is only 2 button styles, this would allow for future scalability (otherwise I would style the buttons in the main stylesheet) */
+
+// Small buy button
+.btn-small {
+    width: 340px;
+    height: 80px;
+    border-radius: 15px;
+    border: none;
+    padding: 12px 0;
+    background-color: $yellow-clr;
+}
+// Hover State
+.btn-small:hover {
+    background: $btn-hover-yellow;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+// Big buy button
+.btn-big {
+    width: 600px;
+    height: 80px;
+    border-radius: 15px;
+    padding: 25px 0px;
+    border: none;
+    background-color: $yellow-clr;
+}
+
+.btn-big:hover {
+    background: $btn-hover-yellow;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
