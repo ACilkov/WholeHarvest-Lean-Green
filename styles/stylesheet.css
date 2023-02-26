@@ -366,6 +366,18 @@ p, h1, h2, h3, h4, h5, h6 {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
+.cta-section .cta-body .cta-content .cta-bottom .security-icons .norton {
+  width: 82px;
+  height: 30px;
+}
+.cta-section .cta-body .cta-content .cta-bottom .security-icons .secure-payments {
+  width: 79px;
+  height: 30px;
+}
+.cta-section .cta-body .cta-content .cta-bottom .security-icons .payment-cards {
+  width: 140px;
+  height: 20px;
+}
 
 /* Money Back Guarantee Disclaimer - Global */
 .money-back-guarantee {
@@ -490,4 +502,60 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+}
+#powerful-results #pr-main-content #testimonials .ts-1 .ts-container .bot-container img, #powerful-results #pr-main-content #testimonials .ts-2 .ts-container .bot-container img {
+  width: 92px;
+  height: 16px;
+}
+
+/* Ingredients Section */
+#ingredients .ing-container {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 40px;
+}
+#ingredients .ing-container .ing-title {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  padding: 0 5px;
+  gap: 20px;
+}
+#ingredients .ing-container #ing-cards {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+}
+#ingredients .ing-container #ing-cards .card-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  padding: 30px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+#ingredients .ing-container #ing-cards .card-container img {
+  width: 440px;
+  height: 280px;
+  border-radius: 15px;
+}
+#ingredients .ing-container #ing-cards .card-container .col-1 {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+}
+#ingredients .ing-container #ing-cards .card-container .col-1 .ing-paragraph {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 28px;
+}
+#ingredients .ing-container #ing-cards .card-container .col-1 ul {
+  padding-left: 50px;
+}
+#ingredients .ing-container #ing-cards .card-container .col-1 ul li {
+  margin-bottom: 10px;
 }/*# sourceMappingURL=stylesheet.css.map */

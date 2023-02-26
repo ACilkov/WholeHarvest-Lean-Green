@@ -193,6 +193,22 @@ p, h1, h2, h3, h4, h5, h6 {
           .row-1 {
             column-gap: 10px;
           }
+
+          // Set WxH for images
+          .norton {
+            width: 82px;
+            height: 30px;
+          }
+
+          .secure-payments {
+            width: 79px;
+            height: 30px;
+          }
+
+          .payment-cards {
+            width: 140px;
+            height: 20px;
+          }
         }
       }
     }
@@ -340,6 +356,12 @@ p, h1, h2, h3, h4, h5, h6 {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
+
+            // Set WxH of image
+            img {
+              width: 92px;
+              height: 16px;
+            }
           }
         }
       }
@@ -347,3 +369,67 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Ingredients Section */
+#ingredients {
+
+  // Set gap and flex of section 
+  .ing-container {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 40px;
+
+    // Title formatting
+    .ing-title {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      text-align: center;
+      padding: 0 5px;
+      gap: 20px;
+    }
+
+    // Card section
+    #ing-cards {
+      display: flex;
+      flex-flow: column nowrap;
+      row-gap: 20px;
+
+      .card-container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        column-gap: 30px;
+        padding: 30px;
+        background-color: $grey-bg-2;
+        box-shadow: 0px 5px 30px rgba(0,0,0,0.2);
+        border-radius: 15px;
+
+        // Set WxH and border of image
+        img {
+          width: 440px;
+          height: 280px;
+          border-radius: 15px;
+        }
+
+        .col-1 {
+          display: flex;
+          flex-flow: column nowrap;
+          row-gap: 20px;
+
+          .ing-paragraph {
+            display: flex;
+            flex-flow: column nowrap;
+            row-gap: 28px;
+          }
+
+          ul {
+            padding-left: 50px;
+            li {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
