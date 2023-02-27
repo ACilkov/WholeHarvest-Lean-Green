@@ -10,7 +10,7 @@ $grey-bg: #F1F0F5;
 $grey-bg-2: #f7f7f7;
 $btn-hover-yellow: linear-gradient(180deg, #FFE600 0%, #FFC700 100%);
 
-// Color for fonts
+/* Colors for Fonts */
 .red-clr {
     color: $red-clr;
 }
@@ -28,4 +28,13 @@ $btn-hover-yellow: linear-gradient(180deg, #FFE600 0%, #FFC700 100%);
 }
 .yellow-clr {
     color: $yellow-clr;
+}
+
+/* Background Colors */
+.white-bg {
+background-color: $white-clr;
+}
+
+.grey-bg {
+background-color: $grey-bg;
 }

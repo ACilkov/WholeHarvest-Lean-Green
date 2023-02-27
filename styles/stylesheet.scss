@@ -29,6 +29,13 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
+// Spacing container for each section
+#spacing-container {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 60px;
+}
+
 // Container for body content
 .body-container {
   max-width: 1170px;
@@ -37,11 +44,11 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-flow: column nowrap;
 }
 
-// Spacing container for each section
-#spacing-container {
+// Wrapping Container - Used on sections with equal spacing between content
+.wrapping-container {
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 60px;
+  row-gap: 40px;
 }
 
 /* Hero-Banner */
@@ -84,7 +91,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* CTA Products */
+/* CTA Products - Global */
 .cta-section {
   display: flex;
   flex-flow: row wrap;
@@ -222,6 +229,7 @@ p, h1, h2, h3, h4, h5, h6 {
   column-gap: 15px;
   padding: 0 39px;
 
+  // Set WxH of icon image
   img {
     width: 40px;
     height: 40px;
@@ -232,53 +240,58 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Powerful-Results */
-#powerful-results{
-  background-color: $grey-bg;
+/* Green Header - Global*/
   // Heading
-  .pr-heading {
+.green-header{
+  padding-bottom: 20px;
+  .gh-heading {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     background-color: $green-clr;
     width: 100%;
-    height: 282px;
-
-    .pr-content {
+    padding: 50px 0 80px;
+  
+    .gh-content {
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      padding: 50px 0 80px;
+  
       gap: 20px;
       text-align: center;
     }
+  }
+  
+  // Arrow background
+  .sth-arrow {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    padding: 2%;
+    border-radius: 50%;
+    margin: 0 auto;
+    top: 50%;
+    transform: translate(0, -50%);
 
-    // Arrow background
-    .sth-arrow {
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-      background-color: $grey-bg;
-      height: 80px;
-      width: 80px;
-      padding: 2%;
-      border-radius: 50%;
-
-      img {
-        width: 24px;
-        height: 36px;
-      }
+    img {
+      width: 24px;
+      height: 36px;
     }
   }
+}
 
+/* Powerful-Results */
+#powerful-results{
+  padding-bottom: 60px;
   // Main body content of Powerful Results
   #pr-main-content {
     display: flex;
     flex-flow: column nowrap;
     row-gap: 49px;
-    padding-top: 100px;
 
     // Cards
     .cards {
@@ -298,6 +311,7 @@ p, h1, h2, h3, h4, h5, h6 {
         align-content: space-between;
         width: 570px;
 
+        // Set WxH of image
         img {
           height: 350px;
           width: 570px;
@@ -332,39 +346,59 @@ p, h1, h2, h3, h4, h5, h6 {
         align-items: center;
       }
     }
+  }
+}
 
-    // Testimonials
-    #testimonials {
+/* Testimonials */
+.testimonials {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 30px;
+
+  // White Background Testimonials
+  .ts-1-w, .ts-2-w {
+    width: 570px;
+    background: $white-clr url(../assets/icons/quotes.svg) no-repeat;
+    background-position: calc(100% - 0px) calc(0% - 0px); // calc() is used for better browser support over bottom right
+    border-radius: 15px;
+
+    .ts-container {
       display: flex;
-      flex-flow: row wrap;
-      column-gap: 30px;
-      padding-bottom: 60px;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      height: 202px;
+      padding: 50px 30px 20px 30px;
+      row-gap: 20px;
+    }
+  }
 
-      .ts-1, .ts-2 {
-        width: 570px;
-        height: 202px;
-        background: $white-clr url(../assets/icons/quotes.svg) no-repeat right top;
-        border-radius: 15px;
+  // Grey Background Testimonials
+  .ts-1-g, .ts-2-g {
+    width: 570px;
+    background: $grey-bg url(../assets/icons/quotes.svg) no-repeat;
+    background-position: calc(100% - 0px) calc(0% - 0px); // calc() is used for better browser support over bottom right
+    border-radius: 15px;
 
-        .ts-container {
-          display: flex;
-          flex-flow: column nowrap;
-          padding: 50px 30px 20px 30px;
-          row-gap: 20px;
+    .ts-container {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      height: 258px;
+      padding: 50px 30px 20px 30px;
+      row-gap: 20px;
+    }
+  }
 
-          .bot-container {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
+  // Initials and Rating
+  .bot-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 
-            // Set WxH of image
-            img {
-              width: 92px;
-              height: 16px;
-            }
-          }
-        }
-      }
+    // Set WxH of image
+    img {
+      width: 92px;
+      height: 16px;
     }
   }
 }
@@ -416,12 +450,14 @@ p, h1, h2, h3, h4, h5, h6 {
           flex-flow: column nowrap;
           row-gap: 20px;
 
+          // Paragraph line height spacing
           .ing-paragraph {
             display: flex;
             flex-flow: column nowrap;
             row-gap: 28px;
           }
 
+          // Fix spacing of ul and li's
           ul {
             padding-left: 50px;
             li {
@@ -429,6 +465,81 @@ p, h1, h2, h3, h4, h5, h6 {
             }
           }
         }
+      }
+    }
+  }
+}
+
+/* Rediscover Section */
+#rediscover {
+  // Trial line spacing between paragraphs
+  .trial {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 28px;
+  }
+
+  // Risk Free
+  // Background Image had to be recreated as it was missing from assets page on Figma (not perfect, but close).
+  .risk-free {
+    margin: 0 auto;
+    background: $green-clr url(../assets/icons/wh_symbol.svg) no-repeat;
+    background-position: calc(100% + 0px) calc(100% + 0px); // calc() is used for better browser support over bottom right
+    overflow: hidden;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 60px 40px;
+
+    .rf-content {
+      display: flex;
+      flex-flow: column nowrap;
+
+      .rf-header {
+        text-align: center;
+      }
+
+      .rf-mid {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 70px;
+
+        // Text content
+        .rf-mid-content {
+          display: flex;
+          flex-flow: column nowrap;
+          row-gap: 28px;
+          justify-content: space-between;
+
+          // Remove a link default styles and apply our own
+          a:link {
+            text-decoration: none;
+          }
+  
+          a:visited {
+            color: $white-clr;
+          }
+  
+          a:hover {
+            color: $yellow-clr;
+          }
+  
+          a:active {
+            color: $red-clr;
+          }
+
+        }
+
+        // Set WxH of Image
+        img {
+          width: 350px;
+          height: 386.45px;
+        }
+      }
+
+      .rf-bot {
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 28px;
       }
     }
   }

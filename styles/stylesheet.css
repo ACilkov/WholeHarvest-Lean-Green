@@ -153,6 +153,7 @@
 }
 
 /* Color Styles - Global Scope */
+/* Colors for Fonts */
 .red-clr {
   color: #D43B4A;
 }
@@ -175,6 +176,15 @@
 
 .yellow-clr {
   color: #FFD800;
+}
+
+/* Background Colors */
+.white-bg {
+  background-color: #FFF;
+}
+
+.grey-bg {
+  background-color: #F1F0F5;
 }
 
 /* Even though there is only 2 button styles, this would allow for future scalability (otherwise I would style the buttons in the main stylesheet) */
@@ -230,6 +240,12 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
+#spacing-container {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 60px;
+}
+
 .body-container {
   max-width: 1170px;
   margin: auto;
@@ -237,10 +253,10 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-flow: column nowrap;
 }
 
-#spacing-container {
+.wrapping-container {
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 60px;
+  row-gap: 40px;
 }
 
 /* Hero-Banner */
@@ -276,7 +292,7 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 40px;
 }
 
-/* CTA Products */
+/* CTA Products - Global */
 .cta-section {
   display: flex;
   flex-flow: row wrap;
@@ -395,47 +411,52 @@ p, h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-/* Powerful-Results */
-#powerful-results {
-  background-color: #F1F0F5;
+/* Green Header - Global*/
+.green-header {
+  padding-bottom: 20px;
 }
-#powerful-results .pr-heading {
+.green-header .gh-heading {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   background-color: #549663;
   width: 100%;
-  height: 282px;
+  padding: 50px 0 80px;
 }
-#powerful-results .pr-heading .pr-content {
+.green-header .gh-heading .gh-content {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding: 50px 0 80px;
   gap: 20px;
   text-align: center;
 }
-#powerful-results .pr-heading .sth-arrow {
+.green-header .sth-arrow {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-color: #F1F0F5;
   height: 80px;
   width: 80px;
   padding: 2%;
   border-radius: 50%;
+  margin: 0 auto;
+  top: 50%;
+  transform: translate(0, -50%);
 }
-#powerful-results .pr-heading .sth-arrow img {
+.green-header .sth-arrow img {
   width: 24px;
   height: 36px;
+}
+
+/* Powerful-Results */
+#powerful-results {
+  padding-bottom: 60px;
 }
 #powerful-results #pr-main-content {
   display: flex;
   flex-flow: column nowrap;
   row-gap: 49px;
-  padding-top: 100px;
 }
 #powerful-results #pr-main-content .cards {
   display: flex;
@@ -479,31 +500,48 @@ p, h1, h2, h3, h4, h5, h6 {
 #powerful-results #pr-main-content .buy-section .align-center {
   align-items: center;
 }
-#powerful-results #pr-main-content #testimonials {
+
+/* Testimonials */
+.testimonials {
   display: flex;
   flex-flow: row wrap;
   -moz-column-gap: 30px;
        column-gap: 30px;
-  padding-bottom: 60px;
 }
-#powerful-results #pr-main-content #testimonials .ts-1, #powerful-results #pr-main-content #testimonials .ts-2 {
+.testimonials .ts-1-w, .testimonials .ts-2-w {
   width: 570px;
-  height: 202px;
-  background: #FFF url(../assets/icons/quotes.svg) no-repeat right top;
+  background: #FFF url(../assets/icons/quotes.svg) no-repeat;
+  background-position: calc(100% - 0px) calc(0% - 0px);
   border-radius: 15px;
 }
-#powerful-results #pr-main-content #testimonials .ts-1 .ts-container, #powerful-results #pr-main-content #testimonials .ts-2 .ts-container {
+.testimonials .ts-1-w .ts-container, .testimonials .ts-2-w .ts-container {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 202px;
   padding: 50px 30px 20px 30px;
   row-gap: 20px;
 }
-#powerful-results #pr-main-content #testimonials .ts-1 .ts-container .bot-container, #powerful-results #pr-main-content #testimonials .ts-2 .ts-container .bot-container {
+.testimonials .ts-1-g, .testimonials .ts-2-g {
+  width: 570px;
+  background: #F1F0F5 url(../assets/icons/quotes.svg) no-repeat;
+  background-position: calc(100% - 0px) calc(0% - 0px);
+  border-radius: 15px;
+}
+.testimonials .ts-1-g .ts-container, .testimonials .ts-2-g .ts-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 258px;
+  padding: 50px 30px 20px 30px;
+  row-gap: 20px;
+}
+.testimonials .bot-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-#powerful-results #pr-main-content #testimonials .ts-1 .ts-container .bot-container img, #powerful-results #pr-main-content #testimonials .ts-2 .ts-container .bot-container img {
+.testimonials .bot-container img {
   width: 92px;
   height: 16px;
 }
@@ -558,4 +596,60 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 #ingredients .ing-container #ing-cards .card-container .col-1 ul li {
   margin-bottom: 10px;
+}
+
+/* Rediscover Section */
+#rediscover .trial {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 28px;
+}
+#rediscover .risk-free {
+  margin: 0 auto;
+  background: #549663 url(../assets/icons/wh_symbol.svg) no-repeat;
+  background-position: calc(100% + 0px) calc(100% + 0px);
+  overflow: hidden;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 60px 40px;
+}
+#rediscover .risk-free .rf-content {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#rediscover .risk-free .rf-content .rf-header {
+  text-align: center;
+}
+#rediscover .risk-free .rf-content .rf-mid {
+  display: flex;
+  flex-flow: row nowrap;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+}
+#rediscover .risk-free .rf-content .rf-mid .rf-mid-content {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 28px;
+  justify-content: space-between;
+}
+#rediscover .risk-free .rf-content .rf-mid .rf-mid-content a:link {
+  text-decoration: none;
+}
+#rediscover .risk-free .rf-content .rf-mid .rf-mid-content a:visited {
+  color: #FFF;
+}
+#rediscover .risk-free .rf-content .rf-mid .rf-mid-content a:hover {
+  color: #FFD800;
+}
+#rediscover .risk-free .rf-content .rf-mid .rf-mid-content a:active {
+  color: #D43B4A;
+}
+#rediscover .risk-free .rf-content .rf-mid img {
+  width: 350px;
+  height: 386.45px;
+}
+#rediscover .risk-free .rf-content .rf-bot {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 28px;
 }/*# sourceMappingURL=stylesheet.css.map */
