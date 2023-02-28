@@ -241,7 +241,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Green Header - Global*/
-  // Heading
+// Heading
 .green-header{
   padding-bottom: 20px;
   .gh-heading {
@@ -333,19 +333,19 @@ p, h1, h2, h3, h4, h5, h6 {
         }
       }
     }
+  }
+}
 
-    // Buy Section
-    .buy-section {
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      row-gap: 15px;
+/* Buy Section (big button) - Global */
+.buy-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 15px;
 
-      // Fix text align from global version
-      .align-center {
-        align-items: center;
-      }
-    }
+  // Fix text align from global version
+  .align-center {
+    align-items: center;
   }
 }
 
@@ -359,7 +359,7 @@ p, h1, h2, h3, h4, h5, h6 {
   .ts-1-w, .ts-2-w {
     width: 570px;
     background: $white-clr url(../assets/icons/quotes.svg) no-repeat;
-    background-position: calc(100% - 0px) calc(0% - 0px); // calc() is used for better browser support over bottom right
+    background-position: calc(100% - 0px) calc(0% - 0px); // calc() is used for better browser support on mobile over bottom right
     border-radius: 15px;
 
     .ts-container {
@@ -376,7 +376,7 @@ p, h1, h2, h3, h4, h5, h6 {
   .ts-1-g, .ts-2-g {
     width: 570px;
     background: $grey-bg url(../assets/icons/quotes.svg) no-repeat;
-    background-position: calc(100% - 0px) calc(0% - 0px); // calc() is used for better browser support over bottom right
+    background-position: calc(100% - 0px) calc(0% - 0px); // calc() is used for better browser support on mobile over bottom right
     border-radius: 15px;
 
     .ts-container {
@@ -478,69 +478,361 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-flow: column nowrap;
     row-gap: 28px;
   }
+}
 
-  // Risk Free
-  // Background Image had to be recreated as it was missing from assets page on Figma (not perfect, but close).
-  .risk-free {
-    margin: 0 auto;
-    background: $green-clr url(../assets/icons/wh_symbol.svg) no-repeat;
-    background-position: calc(100% + 0px) calc(100% + 0px); // calc() is used for better browser support over bottom right
-    overflow: hidden;
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    padding: 60px 40px;
+/* Risk Free - Global */
+// Background image had to be recreated as it was missing from assets page on Figma.
+.risk-free {
+  margin: 0 auto;
+  background: $green-clr url(../assets/icons/wh_symbol.svg) no-repeat;
+  background-position: calc(100% + 0px) calc(100% + 0px); // calc() is used for better browser support on mobile over bottom right
+  overflow: hidden;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 60px 40px;
 
-    .rf-content {
+  .rf-content {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .rf-header {
+      text-align: center;
+    }
+
+    .rf-mid {
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: row nowrap;
+      column-gap: 70px;
 
-      .rf-header {
-        text-align: center;
-      }
-
-      .rf-mid {
-        display: flex;
-        flex-flow: row nowrap;
-        column-gap: 70px;
-
-        // Text content
-        .rf-mid-content {
-          display: flex;
-          flex-flow: column nowrap;
-          row-gap: 28px;
-          justify-content: space-between;
-
-          // Remove a link default styles and apply our own
-          a:link {
-            text-decoration: none;
-          }
-  
-          a:visited {
-            color: $white-clr;
-          }
-  
-          a:hover {
-            color: $yellow-clr;
-          }
-  
-          a:active {
-            color: $red-clr;
-          }
-
-        }
-
-        // Set WxH of Image
-        img {
-          width: 350px;
-          height: 386.45px;
-        }
-      }
-
-      .rf-bot {
+      // Text content
+      .rf-mid-content {
         display: flex;
         flex-flow: column nowrap;
         row-gap: 28px;
+        justify-content: space-between;
+
+        // Remove a link default styles and apply our own
+        a:link {
+          text-decoration: none;
+        }
+
+        a:visited {
+          color: $white-clr;
+        }
+
+        a:hover {
+          color: $yellow-clr;
+        }
+
+        a:active {
+          color: $red-clr;
+        }
+
+      }
+
+      // Set WxH of Image
+      img {
+        width: 350px;
+        height: 386.45px;
       }
     }
+
+    .rf-bot {
+      display: flex;
+      flex-flow: column nowrap;
+      row-gap: 28px;
+    }
+  }
+}
+
+/* Why Green */
+#why-green {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 50px;
+  padding: 60px 0;
+
+  // why-green title
+  .wg-title {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+    text-align: center;
+  }
+
+  // Why-green content section
+  .wg-content {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 25px;
+    justify-content: center;
+    align-items: center;
+
+    // Left side list
+    .left{
+      ul {
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 30px;
+        margin: 0;
+        padding: 0;
+        max-width: 380px;
+        direction: rtl; 
+  
+        // Align content inside li's centrally
+        li {
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+        }
+  
+        // Set custom image as bullet point
+        li::before {
+          content: url(../assets/icons/check_mark.svg);
+          width: 30px;
+          height: 30px;
+          margin: 0 0 0 15px;
+          padding: 0;
+        }
+      }
+    }
+
+    // Right side list
+    .right{
+      ul {
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 30px;
+        margin: 0;
+        padding: 0;
+        max-width: 380px;
+  
+        // Align content inside li's centrally
+        li {
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+        }
+
+        // Set custom image as bullet point
+        li::before {
+          content: url(../assets/icons/check_mark.svg);
+          width: 30px;
+          height: 30px;
+          margin: 0 15px 0 0;
+          padding: 0;
+        }
+      }
+    }
+
+    // Set WxH of image
+    img {
+      width: 440px;
+      height: 500px;
+    }
+  }
+}
+
+/* Safe And Effective */
+#safe-effective {
+  background: $white-clr url(../assets/images/background_light.png) no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  margin: -60px 0; // Fix spacing from spacing container (only for this section)
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 40px;
+  padding: 60px 0;
+
+  // Flex rows and spacing between
+  .row-1,.row-2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 40px 30px;
+
+    // Flex content inside cards
+    .se-card-container {
+      display: flex;
+      flex-flow: column nowrap;
+      row-gap: 20px;
+      align-items: center;
+      text-align: center;
+      max-width: 470px;
+      padding: 30px 20px;
+      background-color: $white-clr;
+      box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+
+      // Spacing between card title and paragraph
+      .se-cc-text {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+      }
+
+      // Set WxH of image
+      .se-cc-icn {
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}
+
+/* Risk Free Grey */
+#risk-free-grey {
+  padding: 60px 0;
+}
+
+/* FAQ */
+#faq {
+  padding: 60px 0;
+
+  // FAQ spacing between title and content
+  .faq-container {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 40px;
+
+    // Center align title
+    .faq-title {
+      text-align: center;
+    }
+  
+    // Faq content section
+    #faq-content {
+      display: flex;
+      flex-flow: column nowrap;
+      row-gap: 20px;
+  
+      // FAQ Question and Answer styling
+      .faq-qa {
+        // When question is active
+        .question-active{
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          background-color: $green-clr;
+          border: 2px solid $green-clr;
+          border-radius: 15px 15px 0 0;
+          padding: 20px 30px;
+        }
+  
+        // When answer is active
+        .answer-active {
+          display: flex;
+          flex-flow: column nowrap;
+          background-color: $white-clr;
+          border: 2px solid $green-clr;
+          border-radius: 0 0 15px 15px;
+          padding: 20px 30px;
+          row-gap: 28px;
+        }
+  
+        // When question is inactive
+        .question {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          background-color: $green-clr;
+          border: 2px solid $green-clr;
+          border-radius: 15px;
+          padding: 20px 30px;
+        }
+  
+        // When answer is inactive - !Andrej do we need this?
+        .answer {
+          display: flex;
+          flex-flow: column nowrap;
+          background-color: $white-clr;
+          border: 2px solid $green-clr;
+          border-radius: 0 0 15px 15px;
+          padding: 20px 30px;
+          row-gap: 28px;  
+        }
+
+        // Set WxH of arrow image
+        img {
+          width: 20.43px;
+          height: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
+
+  // Remove a link default styles and apply our own
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $black-clr;
+  }
+
+  a:hover {
+    color: $green-clr;
+  }
+
+  a:active {
+    color: $red-clr;
+  }
+
+  // Site links styles
+  .site-links {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 20px;
+
+    a {
+      padding: 0 20px;
+    }
+  }
+
+  // Horizontal line
+  hr {
+    border: 2px solid $grey-bg;
+    width: 100%;
+  }
+
+  // Support
+  .support {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px 0;
+
+    p {
+      padding: 0 20px;
+    }
+  }
+
+  // Disclaimer
+  .disclaimer {
+    padding: 0 100px;
+    p {
+      text-align: center;
+    }
+  }
+
+  // End
+  .end {
+    width: 970px;
+    border: 1px solid #333;
+    padding: 10px 0;
+    text-align: center;
   }
 }
