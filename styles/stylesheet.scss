@@ -57,9 +57,12 @@ p, h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   height: 550px;
   width: 100%;
+  display: flex;
 
   .hero-container {
-    padding: 85px 0;
+    width: 1170px;
+    display: flex;
+    flex-flow: column nowrap;
     gap: 20px 0;
 
     h1 {
@@ -95,6 +98,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .cta-section {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   gap: 30px 20px;
 
   /* CTA Purchase */
@@ -111,7 +115,7 @@ p, h1, h2, h3, h4, h5, h6 {
     h4.ot-header {
       background-color: $beige-clr;
       width: 400px;
-      height: 74px;
+      height: 100%;
       border-radius: 10px 10px 0 0;
       text-align: center;
       padding: 22px 0;
@@ -121,7 +125,7 @@ p, h1, h2, h3, h4, h5, h6 {
     h4.ss-header {
       background-color: $green-clr;
       width: 400px;
-      height: 74px;
+      height: auto;
       border-radius: 10px 10px 0 0;
       text-align: center;
       padding: 22px 0;
@@ -134,7 +138,7 @@ p, h1, h2, h3, h4, h5, h6 {
       align-items: center;
       row-gap: 10px;
       width: 400px;
-      height: 620px;
+      height: 100%;
       padding: 20px 0 30px;
       border: 2px solid $grey-bg;
       border-top: 0px;
@@ -297,12 +301,14 @@ p, h1, h2, h3, h4, h5, h6 {
     .cards {
       display: flex;
       flex-flow: row wrap;
+      justify-content: center;
       row-gap: 50px;
 
       .row-1, .row-2 {
         display: flex;
         flex-flow: row nowrap;
-        column-gap: 30px;
+        justify-content: center;
+        gap: 50px 30px;
       }
 
       .card-container {
@@ -325,6 +331,12 @@ p, h1, h2, h3, h4, h5, h6 {
           align-items: flex-start;
           gap: 30px;
           padding: 30px 20px 0 20px;
+
+          // Align text to center
+          h4 {
+            margin: 0 auto;
+            text-align: center;
+          }
 
           // Fix spacing on last card
           .fixed-spacing {
@@ -349,11 +361,12 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Testimonials */
+/* Testimonials - Global */
 .testimonials {
   display: flex;
-  flex-flow: row wrap;
-  column-gap: 30px;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 30px;
 
   // White Background Testimonials
   .ts-1-w, .ts-2-w {
@@ -366,7 +379,7 @@ p, h1, h2, h3, h4, h5, h6 {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
-      height: 202px;
+      height: 100%;
       padding: 50px 30px 20px 30px;
       row-gap: 20px;
     }
@@ -383,7 +396,7 @@ p, h1, h2, h3, h4, h5, h6 {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
-      height: 258px;
+      height: 100%;
       padding: 50px 30px 20px 30px;
       row-gap: 20px;
     }
@@ -527,7 +540,11 @@ p, h1, h2, h3, h4, h5, h6 {
         a:active {
           color: $red-clr;
         }
+      }
 
+      // Align img centrally
+      .rf-mid-img {
+        margin: auto;
       }
 
       // Set WxH of Image
@@ -707,60 +724,60 @@ p, h1, h2, h3, h4, h5, h6 {
       display: flex;
       flex-flow: column nowrap;
       row-gap: 20px;
-  
-      // FAQ Question and Answer styling
-      .faq-qa {
-        // When question is active
-        .question-active{
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: space-between;
-          align-items: center;
-          background-color: $green-clr;
-          border: 2px solid $green-clr;
-          border-radius: 15px 15px 0 0;
-          padding: 20px 30px;
+
+      // Button styles for FAQ questions
+      .accordion {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $green-clr;
+        cursor: pointer;
+        padding: 20px 30px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        transition: 0.4s;
+      }
+
+      .accordion.active {
+        background-color: $green-clr;
+        border-radius: 15px 15px 0 0;
+
+        // Rotate to upwards arrow on active panel
+        img {
+          rotate: 180deg;
         }
-  
-        // When answer is active
-        .answer-active {
+      }
+
+      // Change color of background on hover
+      .active, .accordion:hover {
+        background-color: $yellow-clr
+      }
+
+      // Style the accordion panel
+      .panel {
+        background-color: $white-clr;
+        border: 2px solid $green-clr;
+        border-radius: 0 0 15px 15px;
+        padding: 20px 30px;
+        display: none;
+        overflow: hidden;
+
+        // Space out paragraphs
+        .p-spacer {
           display: flex;
           flex-flow: column nowrap;
-          background-color: $white-clr;
-          border: 2px solid $green-clr;
-          border-radius: 0 0 15px 15px;
-          padding: 20px 30px;
           row-gap: 28px;
         }
-  
-        // When question is inactive
-        .question {
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: space-between;
-          align-items: center;
-          background-color: $green-clr;
-          border: 2px solid $green-clr;
-          border-radius: 15px;
-          padding: 20px 30px;
-        }
-  
-        // When answer is inactive - !Andrej do we need this?
-        .answer {
-          display: flex;
-          flex-flow: column nowrap;
-          background-color: $white-clr;
-          border: 2px solid $green-clr;
-          border-radius: 0 0 15px 15px;
-          padding: 20px 30px;
-          row-gap: 28px;  
-        }
+      }
 
-        // Set WxH of arrow image
-        img {
-          width: 20.43px;
-          height: 12px;
-        }
+      // Set WxH of arrow image
+      img {
+        width: 20.43px;
+        height: 12px;
       }
     }
   }
@@ -769,7 +786,7 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Footer */
 footer {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   row-gap: 20px;
   justify-content: center;
   align-items: center;
@@ -796,7 +813,8 @@ footer {
   .site-links {
     display: flex;
     flex-flow: row wrap;
-    column-gap: 20px;
+    gap: 20px;
+    justify-content: center;
 
     a {
       padding: 0 20px;
@@ -813,6 +831,7 @@ footer {
   .support {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     gap: 10px 0;
 
     p {
@@ -822,17 +841,676 @@ footer {
 
   // Disclaimer
   .disclaimer {
-    padding: 0 100px;
     p {
+      padding: 0 100px;
       text-align: center;
     }
   }
 
   // End
   .end {
-    width: 970px;
     border: 1px solid #333;
     padding: 10px 0;
     text-align: center;
+
+    p {
+      padding: 0 151px;
+    }
+  }
+}
+
+/* Media Queries */
+
+// Ratio of body-container to white space = 0.64.
+// Ratio Calculation - 1920(max viewport width) - 1170(body-container width) = 750(total column white space width). 750 % 1170 = 0.64
+// This ratio is only used in Desktop and Laptop Resolutions
+
+/* Desktop Resolutions / Breakpoints */
+@media only screen and (max-width: 1200px) {
+  // Container for body content
+  .body-container {
+    max-width: 768px;
+  }
+
+  // CTA Products
+  .cta-section {
+    /* CTA Purchase */
+    .cta-body {
+      // One-time header
+      h4.ot-header {
+        width: 374px;
+      }
+  
+      // Green header
+      h4.ss-header {
+        width: 374px;
+      }
+  
+      // Content inside box
+      .cta-content {
+        width: 374px;
+      }
+    }
+  }
+
+  // Powerful results
+  #powerful-results {
+    #pr-main-content {
+      .cards {
+        // Align card-container's to body-container width
+        .row-1,.row-2 {
+          .card-container {
+            width: 369px;
+
+            // Set width to card-container and height to auto for ratio containment
+            img {
+              width: 369px;
+              height: auto;
+            }
+
+            // Adjust spacing of red paragraph
+            .cc-info {
+              .fixed-spacing {
+                padding-top: 55px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Ingredients Section
+  #ingredients {
+    .ing-container {
+      // Card section
+      #ing-cards {
+        // Change direction from row to column and set row gap
+        .card-container {
+          flex-flow: column nowrap;
+          row-gap: 30px;
+  
+          // Reverse order of children elements to put image on top
+          .col-1 {
+            order: 2;
+
+            // Align header text to center from ltr
+            h2 {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Why Green
+  #why-green {
+    // Reduce gap between content so li's aren't on screen edge
+    .wg-content {
+      column-gap: 5px;
+    }
+  }
+
+  // Safe and Effective
+  #safe-effective {
+    .row-1, .row-2 {
+      // Reduce the max-width so both columns can fit within one row
+      .se-card-container {
+        max-width: 369px;
+      }
+    }
+  }
+}
+
+/* Laptop Resolutions / Breakpoints */
+@media only screen and (max-width: 1025px) {
+  // Container for body content
+  .body-container {
+    max-width: 697px;
+  }
+
+  // CTA Products
+  .cta-section {
+    gap: 20px 61px;
+    /* CTA Purchase */
+    .cta-body {
+      // One-time header padding fixes spacing issue of title
+      h4.ot-header {
+        width: 318px;
+        padding: 22px;
+      }
+  
+      // Green header padding fixes spacing issue of title
+      h4.ss-header {
+        width: 318px;
+        height: 100%;
+        padding: 22px;
+      }
+  
+      // Content inside box
+      .cta-content {
+        width: 318px;
+
+        // Scale image down
+        .cta-top {
+          img {
+            width: 100%;
+            height: 170px;
+          }
+        }
+      }
+    }
+  }
+
+  // Powerful results
+  #powerful-results {
+    #pr-main-content {
+      .cards {
+        // Align card-container's to body-container width
+        .row-1,.row-2 {
+          .card-container {
+            width: 333px;
+
+            // Set width to card-container and height to auto for ratio containment
+            img {
+              width: 333px;
+              height: auto;
+            }
+
+            // Adjust spacing of red paragraph
+            .cc-info {
+              .fixed-spacing {
+                padding-top: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Testimonials
+  // Change from row to column, since the internal spacing on the grey one's looks weird due to text height difference.
+  .testimonials {
+    flex-flow: column;
+    
+    .ts-1-w, .ts-2-w, .ts-1-g, .ts-2-g {
+      width: 697px;
+    }
+  }
+
+  // Risk Free
+  .risk-free{
+    .rf-content {
+      // Change order of items to put image above text
+      .rf-mid {
+        flex-flow: column;
+        row-gap: 40px;
+        .rf-mid-content {
+          order: 2;
+        }
+        // Reduce image size and margin to align centrally
+        img {
+          width: 225px;
+          height: auto;
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+
+  // Fixed length for green header
+  .fixed-length {
+    padding: 0 134px;
+  }
+
+  // Why Green
+  #why-green {
+    // Reduce gap between content so li's aren't on screen edge
+    .wg-content {
+      column-gap: 5px;
+
+      img {
+        width: 340px;
+        height: auto;
+      }
+    }
+  }
+
+  // Safe and Effective
+  #safe-effective {
+    .row-1, .row-2 {
+      // Reduce the max-width so both columns can fit within one row
+      .se-card-container {
+        max-width: 333px;
+      }
+    }
+  }
+}
+// Fixes Why Green and Lean section
+@media only screen and (max-width: 785px) {
+  // Why Green
+  #why-green {
+    // Change flex direction from row to column and set row-gap equal to li's gap
+    .wg-content {
+      flex-flow: column nowrap;
+      row-gap: 30px;
+
+      // Adjust order of content
+      .mid {
+        order: 1;
+      }
+
+      // Set li direction to ltr
+      .left {
+        order: 2;
+          ul {
+            direction: ltr;
+
+            // Fixes margin
+            li::before {
+              margin: 0 15px 0 0;
+            }
+          }
+      }
+
+      .right {
+        order: 3;
+      }
+    }
+  }
+}
+
+/* Tablet Resolutions / Breakpoints */
+@media only screen and (max-width: 768px) {
+  // Hero
+  #hero {
+    // Adds overlay on hero image so text is more readable
+    box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.35);
+    // Fixes position of background hero image 
+    background-position: calc(100% + 500px) calc(100% + 0px);
+  }
+
+  // Container for body content
+  .body-container {
+    max-width: 480px;
+  }
+
+  // CTA Products
+  .cta-section {
+    gap: 20px;
+    /* CTA Purchase */
+    .cta-body {
+      // One-time header padding fixes spacing issue of title
+      h4.ot-header {
+        width: 480px;
+        padding: 20px;
+      }
+  
+      // Green header padding fixes spacing issue of title
+      h4.ss-header {
+        width: 480px;
+        height: 100%;
+        padding: 20px;
+      }
+  
+      // Content inside box
+      .cta-content {
+        width: 480px;
+
+        // Reset image WxH to original size
+        .cta-top {
+          img {
+            width: 100%;
+            height: 218px;
+          }
+        }
+      }
+    }
+  }
+
+  // Fixed length for green header
+  .fixed-length {
+    padding: 0 50px;
+  }
+
+  // Powerful results
+  #powerful-results {
+    #pr-main-content {
+      .cards {
+        // Align card-container's to body-container width and change direction from row to column
+        .row-1,.row-2 {
+          flex-flow: column nowrap;
+          .card-container {
+            width: 480px;
+
+            // Set width to card-container and height to auto for ratio containment
+            img {
+              width: 480px;
+              height: auto;
+            }
+
+            // Remove adjusted spacing of red paragraph
+            .cc-info {
+              .fixed-spacing {
+                padding-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Testimonials
+  // Adjust width of testimonials
+  .testimonials {
+    .ts-1-w, .ts-2-w, .ts-1-g, .ts-2-g {
+      width: 480px;
+    }
+  }
+
+  // Safe and Effective
+  #safe-effective {
+    .row-1, .row-2 {
+      // Reduce the max-width so both columns can fit within one row
+      .se-card-container {
+        max-width: 480px;
+      }
+    }
+  }
+
+  // Footer
+  footer {
+    .support, .disclaimer {
+      p {
+        padding: 0;
+      }
+    }
+
+    .end {
+      p {
+        padding: 0 25px;
+      }
+    }
+  }
+}
+
+/* Mobile Phone Resolutions / Breakpoints */
+@media only screen and (max-width: 480px) {
+  // Container for body content
+  .body-container {
+    max-width: 320px;
+  }
+
+  // CTA Products
+  .cta-section {
+    gap: 40px;
+    /* CTA Purchase */
+    .cta-body {
+      // One-time header padding fixes spacing issue of title
+      h4.ot-header {
+        width: 320px;
+      }
+  
+      // Green header padding fixes spacing issue of title
+      h4.ss-header {
+        width: 320px;
+        height: 100%;
+      }
+  
+      // Content inside box
+      .cta-content {
+        width: 320px;
+
+        // Reset image WxH to original size
+        .cta-top {
+          img {
+            width: 100%;
+            height: 170px;
+          }
+        }
+      }
+    }
+  }
+  
+  // Money Back Guarantee Disclaimer
+  // Change direction from row to column, align items centrally
+  .money-back-guarantee {
+    flex-flow: column nowrap;
+    row-gap: 15px;
+    align-items: center;
+
+    // Change text from center to left 
+    p {
+      text-align: left;
+    }
+  }
+
+  // Powerful results
+  #powerful-results {
+    #pr-main-content {
+      .cards {
+        .row-1,.row-2 {
+          .card-container {
+            width: 320px;
+
+            // Set width to card-container and height to auto for ratio containment
+            img {
+              width: 320px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Testimonials
+  // Adjust width of testimonials
+  .testimonials {
+    .ts-1-w, .ts-2-w, .ts-1-g, .ts-2-g {
+      width: 320px;
+    }
+  }
+
+  // Ingredients Section
+  #ingredients {
+    .ing-container {
+      // Card section
+      #ing-cards {
+        // Change direction from row to column and set row gap
+        .card-container {
+          // Adjust image size
+          .col-1, .col-2 {
+            img {
+              width: 260px;
+              height: auto;
+            }
+
+            // Reduce padding of ul for better alignment
+            ul {
+              padding-left: 30px;
+            }
+
+            // Readjust line-height between paragraphs to new line-height of font-size
+            .ing-paragraph {
+              row-gap: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Rediscover Section
+  #rediscover {
+    // Readjust gap between paragraphs to match font-line-height
+    .trial {
+      row-gap: 16px;
+    }
+  }
+
+  // Risk Free
+  .risk-free{
+    .rf-content {
+      .rf-mid {
+        .rf-mid-content{
+          row-gap: 16px;
+        }
+      }
+      .rf-bot {
+        row-gap: 16px;
+      }
+    }
+  }
+
+  // Why Green
+  #why-green {
+    .wg-content {
+      .left, .right {
+        // Set width of ul to align li's
+        ul {
+          width: 320px;
+        }
+      }
+    }
+  }
+
+  // Footer
+  footer {
+    // Align site-links to left
+    .site-links {
+
+      // Force last child to start on new row and align centrally
+      a:last-child {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 380px) {
+  // Risk Free
+  .risk-free{
+    padding: 60px 20px;
+    .rf-content {
+      .rf-mid {
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  // Container for body content
+  .body-container {
+    max-width: 270px;
+  }
+
+  // CTA Products
+  .cta-section {
+    /* CTA Purchase */
+    .cta-body {
+      // One-time header padding fixes spacing issue of title
+      h4.ot-header {
+        width: 270px;
+      }
+  
+      // Green header padding fixes spacing issue of title
+      h4.ss-header {
+        width: 270px;
+        height: 100%;
+      }
+  
+      // Content inside box
+      .cta-content {
+        width: 270px;
+
+        // Reset image WxH to original size
+        .cta-top {
+          img {
+            width: 100%;
+            height: 150px;
+          }
+        }
+      }
+    }
+  }
+  
+  // Powerful results
+  #powerful-results {
+    #pr-main-content {
+      .cards {
+        .row-1,.row-2 {
+          .card-container {
+            width: 270px;
+
+            // Set width to card-container and height to auto for ratio containment
+            img {
+              width: 270px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Testimonials
+  // Adjust width of testimonials
+  .testimonials {
+    .ts-1-w, .ts-2-w, .ts-1-g, .ts-2-g {
+      width: 270px;
+    }
+  }
+
+  // Ingredients Section
+  #ingredients {
+    .ing-container {
+      // Card section
+      #ing-cards {
+        .card-container {
+          // Adjust image size
+          .col-1, .col-2 {
+            img {
+              width: 220px;
+              height: auto;
+            }
+
+            // Reduce padding of ul for better alignment
+            ul {
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Risk Free
+  .risk-free{
+    padding: 60px 20px;
+    .rf-content {
+      .rf-mid {
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  // Why Green
+  #why-green {
+    .wg-content {
+      .left, .right {
+        // Set width of ul to align li's
+        ul {
+          width: 270px;
+        }
+      }
+    }
   }
 }

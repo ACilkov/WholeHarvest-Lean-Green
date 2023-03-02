@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/stylesheet.css" />
     <title aria-label="Whole Harvest - Green and Lean">
@@ -208,7 +213,7 @@
         </div>
         <!-- Buy -->
         <div class="buy-section">
-          <button class="btn-big bf-800-btn black-clr" type="button">
+          <button id="big-btn" onclick="btnScroll(event)" class="btn-big bf-800-btn black-clr" type="button">
             BUY NOW
           </button>
           <div class="money-back-guarantee align-center">
@@ -458,7 +463,7 @@
       <!-- Green Heading -->
       <div class="green-header">
         <div class="gh-heading">
-          <div class="gh-content">
+          <div class="gh-content fixed-length">
             <h2 class="h2-400 white-clr">Rediscover What Natural Energy <span class="h2-800-alt">Really Feels Like</span></h2>
           </div>
         </div>
@@ -632,7 +637,7 @@
               <p class="bf-400 white-clr">You risk nothing other than living a life where you’re just surviving...</p>
               <p class="bf-400 white-clr">When you should be thriving.</p>
               <p class="bf-400 white-clr">
-                So click the button below now to give yourself a well-deserved shot at booming, natural energy levels with<span class="bf-800">Green&Lean.</span></p>
+                So click the button below now to give yourself a well-deserved shot at booming, natural energy levels with <span class="bf-800">Green&Lean.</span></p>
             </div>
           </div>
         </div>
@@ -717,8 +722,8 @@
         </div>
       </div>
       <!-- Buy -->
-      <div class="buy-section">
-        <button class="btn-big bf-800-btn black-clr" type="button">
+      <div class="buy-section body-container">
+        <button id="big-btn2" onclick="btnScroll(event)" class="btn-big bf-800-btn black-clr" type="button">
           BUY NOW
         </button>
         <div class="money-back-guarantee align-center">
@@ -728,11 +733,11 @@
       </div>
     </section>
     <!-- Experience Transformation -->
-    <section id="experience-transformation body-container">
+    <section id="experience-transformation">
       <!-- Green Heading -->
       <div class="green-header">
         <div class="gh-heading">
-          <div class="gh-content">
+          <div class="gh-content fixed-length">
             <h2 class="h2-800 white-clr">EXPERIENCE THE TRANSFORMATION FOR YOURSELF</h2>
           </div>
         </div>
@@ -879,7 +884,7 @@
               <p class="bf-400 white-clr">You risk nothing other than living a life where you’re just surviving...</p>
               <p class="bf-400 white-clr">When you should be thriving.</p>
               <p class="bf-400 white-clr">
-                So click the button below now to give yourself a well-deserved shot at booming, natural energy levels with<span class="bf-800">Green&Lean.</span></p>
+                So click the button below now to give yourself a well-deserved shot at booming, natural energy levels with <span class="bf-800">Green&Lean.</span></p>
             </div>
           </div>
         </div>
@@ -1004,61 +1009,46 @@
         </div>
         <!-- FAQ Content -->
         <div id="faq-content">
-          <div id="faq-1">
-            <div class="faq-qa">
-              <div class="question-active">
-                <h4 class="h4-800-s white-clr">What are the ingredients in GREEN&LEAN?</h4>
-                <img src="assets/icons/arrow_up.svg" alt="arrow up icon" id="arrowup">
-              </div>
-              <div class="answer-active">
+          <div class="faq-1">
+            <button class="accordion"><span class="h4-800-s white-clr">What are the ingredients in GREEN&LEAN?</span><img src="assets/icons/arrow_down.svg" alt="arrow" id="arrow"></button>
+            <div class="panel">
+              <div class="p-spacer">
                 <p class="bf-400 black-clr">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
                 <p class="bf-400 black-clr">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
               </div>
             </div>
           </div>
-          <div id="faq-2">
-            <div class="faq-qa">
-              <div class="question">
-                <h4 class="h4-800-s white-clr">What are the ingredients in GREEN&LEAN?</h4>
-                <img src="assets/icons/arrow_down.svg" alt="arrow down icon" id="arrowup">
-              </div>
-              <div class="answer">
+          <div class="faq-2">
+            <button class="accordion"><span class="h4-800-s white-clr">What are the ingredients in GREEN&LEAN?</span><img src="assets/icons/arrow_down.svg" alt="arrow" id="arrow"></button>
+            <div class="panel">
+              <div class="p-spacer">
                 <p class="bf-400 black-clr">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
               </div>
             </div>
           </div>
-          <div id="faq-3">
-            <div class="faq-qa">
-              <div class="question">
-                <h4 class="h4-800-s white-clr">How many servings per pouch?</h4>
-                <img src="assets/icons/arrow_down.svg" alt="arrow down icon" id="arrowup">
-              </div>
-              <div class="answer">
+          <div class="faq-3">
+            <button class="accordion"><span class="h4-800-s white-clr">How many servings per pouch?</span><img src="assets/icons/arrow_down.svg" alt="arrow" id="arrow"></button>
+            <div class="panel">
+              <div class="p-spacer">
                 <p class="bf-400 black-clr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, cupiditate.</p>
                 <p class="bf-400 black-clr">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                 <p class="bf-400 black-clr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime unde nesciunt dolorum officia, id sunt?</p>
               </div>
             </div>
           </div>
-          <div id="faq-4">
-            <div class="faq-qa">
-              <div class="question">
-                <h4 class="h4-800-s white-clr">Is there any dairy, gluten, or soy?</h4>
-                <img src="assets/icons/arrow_down.svg" alt="arrow down icon" id="arrowup">
-              </div>
-              <div class="answer">
+          <div class="faq-4">
+            <button class="accordion"><span class="h4-800-s white-clr">Is there any dairy, gluten, or soy?</span><img src="assets/icons/arrow_down.svg" alt="arrow" id="arrow"></button>
+            <div class="panel">
+              <div class="p-spacer">
                 <p class="bf-400 black-clr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, cupiditate.</p>
                 <p class="bf-400 black-clr">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
               </div>
             </div>
           </div>
-          <div id="faq-5">
-            <div class="faq-qa">
-              <div class="question">
-                <h4 class="h4-800-s white-clr">Will GREEN&LEAN upset my stomach?</h4>
-                <img src="assets/icons/arrow_down.svg" alt="arrow down icon" id="arrowup">
-              </div>
-              <div class="answer">
+          <div class="faq-5">
+            <button class="accordion"><span class="h4-800-s white-clr">Will GREEN&LEAN upset my stomach?</span><img src="assets/icons/arrow_down.svg" alt="arrow" id="arrow"></button>
+            <div class="panel">
+              <div class="p-spacer">
                 <p class="bf-400 black-clr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repellat voluptates, amet nesciunt asperiores impedit ratione excepturi minima, ullam placeat corporis. Quasi?</p>
                 <p class="bf-400 black-clr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut maiores dolorum nisi?</p>
               </div>
@@ -1087,5 +1077,8 @@
         <p class="bf-400-s black-clr">Cras et ullamcorper velit. In hac habitasse platea dictumst. Nunc vitae dui quis risus elementum auctor.</p>
       </div>
     </footer>
+    <!-- JavaScript - Scripts -->
+    <script src="scripts/btn-scorll.js"></script>
+    <script src="scripts/faq.js"></script>
   </body>
 </html>

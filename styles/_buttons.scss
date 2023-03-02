@@ -29,3 +29,49 @@
     background: $btn-hover-yellow;
     box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
 }
+
+/* Media Queries */
+/* Laptop Resolutions / Breakpoints */
+@media only screen and (max-width: 1025px) {
+  // Adjust width of small buy button
+  .btn-small {
+    width: 258px;
+  }    
+}
+
+/* Tablet Resolutions / Breakpoints */
+@media only screen and (max-width: 768px) {
+  // Adjust width of small buy button
+  .btn-small {
+    width: 358px;
+  }
+
+  // Adjust width of the big buy button
+  .btn-big {
+    width: 480px;
+  }
+}
+
+/* Mobile Phone Resolutions / Breakpoints */
+@media only screen and (max-width: 480px) {
+  // Adjust width of small buy button
+  .btn-small {
+    width: 280px;
+  }
+
+  // Adjust width of the big buy button
+  .btn-big {
+    width: 320px;
+  }    
+}
+@media only screen and (max-width: 320px) {
+    // Adjust width of small buy button
+    .btn-small {
+      width: 250px;
+    }
+  
+    // Adjust width of the big buy button
+    .btn-big {
+      width: 270px;
+    }    
+  }
