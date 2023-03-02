@@ -739,7 +739,6 @@ p, h1, h2, h3, h4, h5, h6 {
         border: none;
         outline: none;
         border-radius: 15px;
-        transition: 0.4s;
       }
 
       .accordion.active {
@@ -750,11 +749,6 @@ p, h1, h2, h3, h4, h5, h6 {
         img {
           rotate: 180deg;
         }
-      }
-
-      // Change color of background on hover
-      .active, .accordion:hover {
-        background-color: $yellow-clr
       }
 
       // Style the accordion panel
